@@ -3,7 +3,7 @@
 }
 
 .home > header {
-	background: url('../openedu_theme/images/kids.jpg');
+	background: url('#{$static-path}/images/kids.jpg');
 	background-size: cover;
 	background-position: 50%;
 
