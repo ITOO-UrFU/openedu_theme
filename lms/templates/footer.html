@@ -31,11 +31,6 @@
                         <img alt="${_('edX Home Page')}" src="${footer['logo_image']}">
                     </a>
                 </div>
-
-
-                % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-                <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-                % endif
                 </div>
             </div>
 
@@ -46,14 +41,22 @@
                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 column-2-1 col-xs-12 first-div-border column-styles ">
                     <div class="row full-height">
                         <div class="ml-xl-0 col-lg-10 ml-lg-auto col-md-12 column-2-2 col-sm-10 full-height column-styles">
-                              <h2 class="heading">edX</h2>
+                            <div class="copyright"><span class="sign">©</span> ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</div>
+                            <div class="copyright"><span class="sign">©</span><p>Институт технологий открытого образования</p></div>
                         </div>
                     </div>
                  </div>
                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 second-div-border column-styles ">
                         <div class="row full-height">
                             <div class="col-lg-12 col-md-12 col-sm-10 column-2-2 full-height column-styles">
-                                  <h2 class="heading">Legal</h2>
+                                  <div class="col phones">
+                                    <div>Контакт-центр:</div>
+                                    <div class="big"><p>+7 (343) 375 97 35</p></div>
+                                    <div></div>
+                                    <div class="big">+7 (919) 367 79 72</div>
+                                    <div>Телефоны в Екатеринбурге</div>
+                                    <p class="more js-more-service-phones"><a href="#" class="dashed">Контакты</a></p>
+                                </div>
                             </div>
                           </div>
                 </div>
