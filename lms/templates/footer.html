@@ -45,7 +45,7 @@
             <div class="footer-about-openedx">
               <p>
                 <a href="${footer['openedx_link']['url']}">
-                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="100" />
                 </a>
               </p>
             </div>
@@ -65,6 +65,7 @@
       % endif
     >
       <div class="colophon">
+        <div class="row">
         <nav class="nav-colophon" aria-label="${_('About')}">
           <ol>
               % for item_num, link in enumerate(footer['navigation_links'], start=1):
@@ -74,53 +75,46 @@
               % endfor
           </ol>
         </nav>
+        <div class="col-md-3">
+          <div class="wrapper-logo">
+            <p>
+              <a href="/">
+                ## The default logo is a placeholder.
+                ## You can either replace this link entirely or update
+                ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
+                ## If you customize FOOTER_ORGANIZATION_IMAGE, then the image
+                ## can be included in the footer on other sites
+                ## (e.g. a blog or marketing front-end) to provide a consistent_test
+                ## user experience.  See the branding app for details.
+                <img alt="organization logo" src="${static.url("images/logo.png")}">
+              </a>
+            </p>
+          </div>
 
-        <div class="wrapper-logo">
-          <p>
-            <a href="/">
-              ## The default logo is a placeholder.
-              ## You can either replace this link entirely or update
-              ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
-              ## If you customize FOOTER_ORGANIZATION_IMAGE, then the image
-              ## can be included in the footer on other sites
-              ## (e.g. a blog or marketing front-end) to provide a consistent_test
-              ## user experience.  See the branding app for details.
-              <img alt="organization logo" src="${static.url("images/logo.png")}">
-            </a>
-          </p>
+          ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+          <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
+          <p class="copyright">Институт технологий открытого образования</p>
+          <nav class="nav-legal" aria-label="${_('Legal')}">
+            <ul>
+              % for item_num, link in enumerate(footer['legal_links'], start=1):
+                <li class="nav-legal-0${item_num}">
+                  <a href="${link['url']}">${link['title']}</a>
+                </li>
+              % endfor
+            </ul>
+          </nav>
         </div>
-
-        ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
-        <p class="copyright">Институт технологий открытого образования</p>
-        <nav class="nav-legal" aria-label="${_('Legal')}">
-          <ul>
-            % for item_num, link in enumerate(footer['legal_links'], start=1):
-              <li class="nav-legal-0${item_num}">
-                <a href="${link['url']}">${link['title']}</a>
-              </li>
+          <ul class="list-inline list-unstyled social">
+            % for link in footer['social_links']:
+            <li>
+                <a href="${link['url']}" class="social-links external" title="${link['title']}" rel="noreferrer">
+                    <span class="icon fa ${link['icon-class']}" aria-hidden="true"></span>
+                    <span class="sr">${link['action']}</span>
+                </a>
+            </li>
             % endfor
           </ul>
-        </nav>
-        <div class="col-xl-4 col-lg-4 col-md-9 ml-md-auto col-sm-7 column-3 flex-column fourth-div-border column-styles">
-          <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column-3-1 social-app-links-div column-styles ml-auto">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 column-3-2 column-styles">
-                  <ul class="list-inline list-unstyled social">
-                    % for link in footer['social_links']:
-                    <li>
-                        <a href="${link['url']}" class="social-links external" title="${link['title']}" rel="noreferrer">
-                            <span class="icon fa ${link['icon-class']}" aria-hidden="true"></span>
-                            <span class="sr">${link['action']}</span>
-                        </a>
-                    </li>
-                    % endfor
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
         </div>
       </div>
 
