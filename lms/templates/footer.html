@@ -7,7 +7,6 @@
 %>
 <% footer = get_footer(is_secure=is_secure) %>
 <%namespace name='static' file='static_content.html'/>
-  <div class="wrapper wrapper-footer">
 <footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}"
   ## When rendering the footer through the branding API,
   ## the direction may not be set on the parent element,
@@ -16,7 +15,7 @@
     dir=${bidi}
   % endif
 >
-      <div class="colophon">
+      <div class="container">
         <div class="row">
         <nav class="nav-colophon" aria-label="${_('About')}">
           <ol>
@@ -83,7 +82,6 @@
       </div>
       % endif
     </footer>
-  </div>
 % if include_dependencies:
   <%static:js group='base_vendor'/>
   <%static:css group='style-vendor'/>
