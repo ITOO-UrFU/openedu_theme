@@ -12,16 +12,14 @@
 	    padding-bottom: 150px;
 	}
 	.title {
-		background: transparent;
-		box-shadow: none;
-		margin-left: 0;
+		background: rgb(255, 255, 255, 0.92);
 
 		> .heading-group h1 {
-			color: #fff;
+			color: #080808;
 			text-shadow: none;
 		}
 		> .heading-group p {
-			color: #fff;
+			color: #4d4d4d;
 		}
 	}
 }
