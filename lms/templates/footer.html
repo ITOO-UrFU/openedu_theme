@@ -91,8 +91,8 @@
         </div>
 
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина» Институт технологий открытого образования</p>
-
+        <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
+        <p class="copyright">Институт технологий открытого образования</p>
         <nav class="nav-legal" aria-label="${_('Legal')}">
           <ul>
             % for item_num, link in enumerate(footer['legal_links'], start=1):
@@ -102,6 +102,15 @@
             % endfor
           </ul>
         </nav>
+        <ul class="list-inline list-unstyled app-links">
+          % for link in footer['mobile_links']:
+          <li>
+            <a href="${link['url']}" class="app-link external">
+              <img alt="${link['title']}" src="${link['image']}">
+            </a>
+          </li>
+          % endfor
+        </ul>
       </div>
 
       ## Please leave this link and use one of the logos provided
