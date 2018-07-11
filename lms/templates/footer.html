@@ -33,7 +33,7 @@
                  <nav class="nav-colophon" aria-label="${_('About')}">
                               <ul class="list-unstyled clear-margins  ">
                                     % for item_num, link in enumerate(footer['navigation_links'], start=1):
-                                    <li class="nav-colophon-0${item_num}">
+                                    <li class="nav-colophon-0${item_num} inline-li">
                                         <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
                                     </li>
                                     % endfor
@@ -60,15 +60,6 @@
                     </li>
                     % endfor
              </ul>
-            <ul class="list-inline list-unstyled app-links">
-                    % for link in footer['mobile_links']:
-                    <li>
-                        <a href="${link['url']}" class="app-link external">
-                            <img alt="${link['title']}" src="${link['image']}">
-                        </a>
-                    </li>
-                    % endfor
-            </ul>
               <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
               <p class="copyright">Институт технологий открытого образования</p>
         </div>
