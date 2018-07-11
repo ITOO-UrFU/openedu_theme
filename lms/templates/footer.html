@@ -39,47 +39,22 @@
                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 column-2-1 col-xs-12 first-div-border column-styles ">
                     <div class="row full-height">
                         <div class="ml-xl-0 col-lg-10 ml-lg-auto col-md-12 column-2-2 col-sm-10 full-height column-styles">
-                                  <ul class="list-unstyled clear-margins  ">
-                                      % for link in footer["business_links"]:
-                                      <li>
-                                          <a href="${link['url']}">${link['title']}</a>
-                                      </li>
-                                      % endfor
-                                  </ul>
-                        </div>
-                    </div>
-                 </div>
-                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 second-div-border column-styles ">
-                        <div class="row full-height">
-                            <div class="col-lg-12 col-md-12 col-sm-10 column-2-2 full-height column-styles">
-                                    <ul class="list-unstyled clear-margins  ">
-                                        % for link in footer["more_info_links"]:
-                                        <li>
-                                          <a href="${link['url']}">${link['title']}</a>
-                                        </li>
-                                        % endfor
-                                    </ul>
-                            </div>
-                          </div>
-                </div>
-                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 third-div-border column-styles">
-                      <div class="row full-height">
-                        <div class="col-lg-12 col-md-12 col-sm-10 full-height column-2-2 column-styles">
                               <ul class="list-unstyled clear-margins  ">
-                                % for link in footer["connect_links"]:
-                                <li>
-                                  <a href="${link['url']}">${link['title']}</a>
-                                </li>
-                                % endfor
+                                    % for item_num, link in enumerate(footer['navigation_links'], start=1):
+                                    <li class="nav-colophon-0${item_num}">
+                                        <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
+                                    </li>
+                                    % endfor
                               </ul>
                         </div>
-                      </div>
+                    </div>
                  </div>
                   <div class="openedx-link">
                     <a href="${footer['openedx_link']['url']}" title="${footer['openedx_link']['title']}">
                       <img alt="${footer['openedx_link']['title']}" src="${footer['openedx_link']['image']}" width="100">
                     </a>
                   </div>
+            % endif
 
 
             </div>
