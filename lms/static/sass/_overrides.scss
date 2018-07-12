@@ -23,8 +23,8 @@
 		}
 	}
 }
-#footer-edx-v3 {
-    background: #ececec;
+footer#footer-edx-v3 {
+    background: #ececec !important;
 }
 
 .copyright{
@@ -35,9 +35,34 @@
 }
 
 .inline-li{
-    display: inline;
+	display: inline;
+	margin-right: 30px;
 }
 
 .social-link li {
-    display: inline;
+	display: block;
+	height: 50px;
+    margin-left: 50px;
+	margin-bottom: 0;
+	margin-inline-start: 500px;
 }
+
+.list-inline {
+	width: 170px;
+}
+
+.main-row {
+	display: inline-flex;
+}
+
+.icon {
+	font-size: 27px;
+}
+
+.openedx-link {
+	display: block;
+	margin-left: 110px;
+	margin-bottom: 10px;
+	margin-top: 50px;
+}
+
