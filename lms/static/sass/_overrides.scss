@@ -31,7 +31,8 @@ footer#footer-edx-v3 {
     margin: -2px 0 8px 0 !important;
     font-size: 0.6875em !important;
     color: #767676 !important;
-    text-align: left !important;
+	text-align: left !important;
+	margin-bottom: 0 !important;
 }
 
 .inline-li{
@@ -39,12 +40,15 @@ footer#footer-edx-v3 {
 	margin-right: 30px;
 }
 
-.social-link li {
+.social-link{
 	display: block;
 	height: 50px;
     margin-left: 50px;
 	margin-bottom: 0;
 	margin-inline-start: 500px;
+}
+.social-link li{
+	display: inline-flex;
 }
 
 .list-inline {
@@ -55,14 +59,24 @@ footer#footer-edx-v3 {
 	display: inline-flex;
 }
 
-.icon {
+footer#footer-edx-v3 .icon {
 	font-size: 27px;
 }
 
-.openedx-link {
+footer#footer-edx-v3 .openedx-link {
 	display: block;
 	margin-left: 110px;
 	margin-bottom: 10px;
+	margin-top: 50px;
+	width: 100px;
+}
+
+.nav-title{
+	margin-left: 50px;
+}
+
+.copy-div{
+	padding: 0;
 	margin-top: 50px;
 }
 
