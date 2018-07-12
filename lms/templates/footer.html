@@ -45,6 +45,16 @@
             <div class="copy-div">
                 <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
                 <p class="copyright">Институт технологий открытого образования</p>
+                
+                <nav class="nav-legal" aria-label="${_('Legal')}">
+                    <ul>
+                    % for item_num, link in enumerate(footer['legal_links'], start=1):
+                        <li class="nav-legal-0${item_num}">
+                        <a href="${link['url']}">${link['title']}</a>
+                        </li>
+                    % endfor
+                    </ul>
+                </nav>
             </div>
         </div>
         <div class="social-link">
