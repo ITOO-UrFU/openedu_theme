@@ -57,7 +57,10 @@ footer#footer-edx-v3 {
 }
 
 .main-row {
-	display: inline-flex;
+	display: inline-flex !important;
+	border: none !important;
+	background: none !important;
+	box-shadow: none !important;
 }
 
 footer#footer-edx-v3 .icon {
