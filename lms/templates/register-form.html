@@ -154,7 +154,7 @@ from student.models import UserProfile
     % if settings.REGISTRATION_EXTRA_FIELDS['urfu_group'] != 'hidden':
     <li class="field ${settings.REGISTRATION_EXTRA_FIELDS['urfu_group']} text" id="field-urfu_group">
       <label for="urfu_group">${_('urfu_group')}</label>
-      <input id="urfu_group" type="text" name="urfu_group" value="" placeholder="${_('example:ФО-440005')}" aria-describedby="urfu_group-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['urfu_group'] == 'required' else ''} />
+      <input id="urfu_group" type="text" name="urfu_group" value="" placeholder="${_('example:FO-440005')}" aria-describedby="urfu_group-tip" ${'required aria-required="true"' if settings.REGISTRATION_EXTRA_FIELDS['urfu_group'] == 'required' else ''} />
     </li>
     % endif
     % if settings.REGISTRATION_EXTRA_FIELDS['city'] != 'hidden':
