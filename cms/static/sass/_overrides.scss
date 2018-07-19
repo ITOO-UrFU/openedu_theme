@@ -2,8 +2,8 @@
 	background-color: none !important;
 	background-image: none !important;
 	background: url('#{$static-path}/images/bg_smallv3.png') !important;
-	background-size: cover;
-	background-position: 50%;
+	background-size: cover !important;
+	background-position: 50% !important;
 }
 
 .content header{
