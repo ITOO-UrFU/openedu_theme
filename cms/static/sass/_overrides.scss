@@ -1,0 +1,21 @@
+.view-howitworks.not-signedin .wrapper-content-header{
+	background-color: none !important;
+	background-image: none !important;
+	background: url('#{$static-path}/images/bg_smallv3.png') !important;
+	background-size: cover;
+	background-position: 50%;
+}
+
+.content header{
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,0.5);
+	background: rgba(255,255,255,0.92);
+}
+
+.view-howitworks.not-signedin .content-header h1{
+	border-bottom: 1px solid #627178;
+	color: #262626;
+}
+
+.view-howitworks.not-signedin .content-header .tagline{
+	color: #4f6671;
+}
