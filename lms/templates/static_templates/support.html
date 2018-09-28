@@ -1,1 +1,15 @@
-<iframe src="https://support.edubrick.ru/" width="100%" height="1000" frameborder="0" hspace="5" vspace="7" scrolling="no"></iframe>
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">Центр поддержки</%block>
+<div class="wings-logo2">
+</div>
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>Центр поддержки</h1>
+        <div class="text-contact">
+            <iframe src="https://support.edubrick.ru/" width="100%" height="1000" frameborder="0" hspace="5" vspace="7" scrolling="no"></iframe>
+        </div>
+    </section>
+</main>
