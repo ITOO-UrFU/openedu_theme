@@ -203,3 +203,17 @@ h3 {
 .text-contact p {
 	line-height: 5px !important;
 }
+
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register{
+	border: none !important;
+	border-bottom: none !important;
+	background-image: none !important;
+	text-shadow: none !important;
+}
+
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover{
+	background-image: linear-gradient(to bottom,#0075b4 0%,#004393 100%,#002a84 50%,#002f86 100%);
+	text-shadow: none !important;
+	border: none !important;
+	border-bottom: none !important;
+}
