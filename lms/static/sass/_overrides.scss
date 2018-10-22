@@ -204,14 +204,14 @@ h3 {
 	line-height: 5px !important;
 }
 
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register{
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, strong, button{
 	border: none !important;
 	border-bottom: none !important;
 	background-image: none !important;
 	text-shadow: none !important;
 }
 
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover{
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, strong, button:hover{
 	background-image: linear-gradient(to bottom,#0075b4 0%,#004393 100%,#002a84 50%,#002f86 100%);
 	text-shadow: none !important;
 	border: none !important;
@@ -229,5 +229,6 @@ h3 {
     margin-top: none !important; 
     padding-top: 30px !important;
     overflow: none !important; 
-    position: none !important; 
+	position: none !important;
+	padding-bottom: 30px !important; 
 }
