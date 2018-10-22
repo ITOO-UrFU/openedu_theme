@@ -242,6 +242,11 @@ h3 {
 	box-shadow: 0 1px 15px 0 rgba(0,0,0,0.5) !important;
 }
 
-.doc-link{
-	margin: 15px 100px 15px 15px !important;
+.header-global.slim .wrapper-header {
+	height: auto;
+}
+
+.header-global .wrapper-header .course-header{
+	width: 45%;
+	height: auto;
 }
