@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 %>
 <%page args="course" expression_filter="h"/>
 <article class="theme-courses_course" id="${course.id}" role="region" aria-label="${course.display_name_with_default}">
-  <a class="theme-btn" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${_("LEARN MORE")}</a>
     <div class="theme-courses_img-holder">
         <a class="theme-courses_img-link" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">
             <img class="theme-courses_img" src="${course.course_image_url}" alt="${course.display_name_with_default} ${course.display_number_with_default}" />
