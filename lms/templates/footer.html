@@ -98,7 +98,7 @@
                  <nav class="nav-colophon" aria-label="${_('About')}">
                               <ul class="list-unstyled clear-margins  ">
                                     % for item_num, link in enumerate(footer['navigation_links'], start=1):
-                                    % if ${link['name']} != 'contact':
+                                    % if link['name'] != 'contact':
                                     <li class="nav-colophon-0${item_num} inline-li">
                                         <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
                                     </li>
