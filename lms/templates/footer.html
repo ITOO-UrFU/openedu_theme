@@ -18,12 +18,14 @@
           <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}" style="margin-bottom: 20px;">
             <ul class="navbar-nav">
               % for item_num, link in enumerate(footer['navigation_links'], start=1):
+              % if link['name'] != 'contact':
                 <li class="nav-item">
                   <a class="nav-link" href="${link['url']}">${link['title']}</a>
                 </li>
+              % endif
               % endfor
                 <li class="nav-item">
-                  <a id="contact" href="/contact">Контакты</a>
+                  <a class="nav-link" href="/contact">Контакты</a>
                 </li>
             </ul>
           </nav>
@@ -104,7 +106,7 @@
                                     </li>
                                     % endif
                                     % endfor
-                                    <li class="nav-colophon-03">
+                                    <li class="nav-colophon-03 inline-li">
                                       <a id="contact" href="/contact">Контакты</a>
                                     </li>
                               </ul>
