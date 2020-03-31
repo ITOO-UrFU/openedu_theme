@@ -15,7 +15,7 @@
     <footer>
       <div class="row">
         <div class="col-md-9">
-          <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
+          <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}" style="margin-bottom: 20px;">
             <ul class="navbar-nav">
               % for item_num, link in enumerate(footer['navigation_links'], start=1):
                 <li class="nav-item">
@@ -29,9 +29,9 @@
           </nav>
 
           ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
-          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;">ЦНОТиАСО</p>
-          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;">${footer['copyright']}
+          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
+          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">ЦНОТиАСО</p>
+          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">${footer['copyright']}
                % if icp_license_info.get('icp_license'):
                 ${u" | {text}".format(text=icp_license_info.get('text'))}
                 <a href="${icp_license_info.get('icp_license_link', '#')}">
