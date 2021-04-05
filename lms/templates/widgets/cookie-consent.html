@@ -1,0 +1,27 @@
+<!-- Cookie Consent -->
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%namespace name='static' file='../static_content.html'/>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.1/cookieconsent.min.js"></script>
+
+
+<script>
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#0075b4"
+            },
+            "button": {
+                "background": "#fff",
+                "text": "#0075b4"
+            }
+        },
+        "showLink": false,
+        "content": {
+            "message": "Для функционирования сайта мы собираем cookie, данные об IP-адресе и местоположении пользователей. ",
+            "dismiss": "Я согласен."
+        }
+    });
+</script>
