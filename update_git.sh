@@ -1,8 +1,5 @@
 #!/bin/bash
 
 
-cd /edx/app/edxapp/themes/openedu_theme 
-sudo git pull origin prod
-
-
-sudo /edx/bin/supervisorctl restart edxapp:lms
+cd /edx/app/edxapp/edx-platform/themes/openedu_theme 
+sudo git pull origin ironwood

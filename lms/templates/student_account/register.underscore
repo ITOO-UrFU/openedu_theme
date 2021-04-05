@@ -8,7 +8,6 @@
 	</div>
 <% } %>
 
-<h2>Создать учетную запись</h2>
 
 <form id="register" class="register-form" autocomplete="off" tabindex="-1" method="POST">
 

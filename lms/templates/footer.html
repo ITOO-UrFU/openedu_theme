@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-md-9">
           <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}" style="margin-bottom: 20px;">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" style="display:none !important">
               % for item_num, link in enumerate(footer['navigation_links'], start=1):
               % if link['name'] != 'contact':
                 <li class="nav-item">
@@ -64,7 +64,7 @@
           ## through an API to partner sites (such as marketing sites or blogs),
           ## which are not technically powered by Open edX.
           % if not hide_openedx_link:
-            <div class="footer-about-openedx">
+            <div class="footer-about-openedx" style="display: none !important">
               <p>
                 <a href="${footer['openedx_link']['url']}">
                   <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
@@ -98,7 +98,7 @@
              <div class="row">
 
                  <nav class="nav-colophon" aria-label="${_('About')}">
-                              <ul class="list-unstyled clear-margins  ">
+                              <ul style="display: none !important" class="list-unstyled clear-margins  ">
                                     % for item_num, link in enumerate(footer['navigation_links'], start=1):
                                     % if link['name'] != 'contact':
                                     <li class="nav-colophon-0${item_num} inline-li">
