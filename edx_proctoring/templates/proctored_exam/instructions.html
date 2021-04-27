@@ -11,37 +11,7 @@
           of photo identification such as a driver’s license or
           passport.
       </p>
-      <ol>
-          <li>{{instruction|safe}}</li>
-      </ol>
-        <p>
-            If you have issues relating to proctoring, you can contact {{ provider_name }} technical support by emailing {{ provider_tech_support_email }}  or by calling {{ provider_tech_support_phone }}.
-        </p>
-      <button id="software_download_link" class="exam-action-button btn-pl-primary lol-button" data-action="click_download_software"> "Start System Check"</button>
-    <p>
-        1. Copy this unique exam code. You will be prompted to paste this code later before you start the exam.
-    </p>
-    <p>
-      <span class="proctored-exam-code">{{exam_code}}</span>
-    </p>
-    <p>
-        Select the exam code, then copy it using Command+C (Mac) or Control+C (Windows).
-    </p>
-    <p>
-        2. Click the button below to set up proctoring.
-    </p>
-    <button id="software_download_link" class="exam-action-button btn-pl-primary lol" data-action="click_download_software">"Start System Check"</button>
-    <p>
-        A new window will open. You will run a system check before downloading the proctoring application.
-    </p>
-    <p>
-        You will be asked to verify your identity as part of the proctoring exam set up.
-        Make sure you are on a computer with a webcam, and that you have valid photo identification
-        such as a driver's license or passport, before you continue.
-    </p>
-    <p>
-          3. When you have finished setting up proctoring, start the exam.
-    </p>
+      <p class="instruction">{{instruction|safe}}</p>
     <div class="footer-sequence border-b-0 padding-b-0">
       <a href="#" class="start-proctored-exam">"Start Proctored Exam"</a>
     </div>
@@ -102,8 +72,8 @@
           // The proctoring setup is not yet complete.
           // Show a modal indicating that the user is not done yet.
           edx.courseware.proctored_exam.accessibleError(
-              gettext("Cannot Start Proctored Exam"),
-              gettext("You must complete the proctoring setup before you can start the exam."),
+              gettext("Не удается начать наблюдаемый экзамен"),
+              gettext("Прежде чем приступить к экзамену, необходимо завершить настройку прокторинга."),
           );
       }
     });
