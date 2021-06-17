@@ -271,8 +271,13 @@ footer#footer-edx-v3 .openedx-link {
 //     font-size: 14px;
 // }
 
-.dashboard .main-container .my-courses .course .details .wrapper-course-image {
-  width: unset;
-  max-height: 150px;
-  overflow: visible;
+//.dashboard .main-container .my-courses .course .details .wrapper-course-image {
+//  width: unset;
+//  max-height: 150px;
+//  overflow: visible;
+//}
+
+.course-image {
+    width: 266px;
+    height: 150px;
 }
