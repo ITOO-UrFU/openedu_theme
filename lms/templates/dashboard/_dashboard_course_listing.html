@@ -453,6 +453,23 @@ from util.course import get_link_for_about_page, get_encoded_course_sharing_utm_
             % endif
           </div>
         % endif
+
+        % if course_mode_info and course_mode_info['show_upsell'] and not entitlement:
+          <div class="message message-upsell has-actions is-shown">
+            <div class="wrapper-extended">
+              <p class="message-copy" align="justify">
+                <b class="message-copy-bold">
+                </b><br></p>
+              <div class="action-upgrade-container">
+                    <span class="action-upgrade-icon" aria-hidden="true"></span>
+                  <span class="wrapper-copy">
+                    <span class="copy" id="upgrade-to-verified"></span>
+                      <span class="sr"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+        % endif
       % endif
 
         % if course_requirements:
