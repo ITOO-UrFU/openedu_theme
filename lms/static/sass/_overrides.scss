@@ -1,144 +1,149 @@
 .header-global h1.logo img {
-	max-height: 40px;
+  max-height: 40px;
 }
 
 .home > header {
-	background: url('#{$static-path}/images/bg_smallv3.png');
-	background-size: cover;
-	background-position: 50%;
+  background: url('#{$static-path}/images/bg_smallv3.png');
+  background-size: cover;
+  background-position: 50%;
 
-	.outer-wrapper {
-		padding-top:150px;
-	    padding-bottom:150px;
-	}
-	.title {
-		background:rgba(255, 255, 255, 0.92);
+  .outer-wrapper {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
 
-		> .heading-group h1 {
-			color: #080808;
-			text-shadow: none;
-		}
-		> .heading-group p {
-			color: #4d4d4d;
-		}
-	}
+  .title {
+    background: rgba(255, 255, 255, 0.92);
+
+    > .heading-group h1 {
+      color: #080808;
+      text-shadow: none;
+    }
+
+    > .heading-group p {
+      color: #4d4d4d;
+    }
+  }
 }
+
 footer#footer-edx-v3 {
-    background: #ececec !important;
+  background: #ececec !important;
 }
 
-.copyright{
-    margin: -2px 0 8px 0 !important;
-    font-size: 0.6875em !important;
-    color: #767676 !important;
-	text-align: left !important;
-	margin-bottom: 0 !important;
+.copyright {
+  margin: -2px 0 8px 0 !important;
+  font-size: 0.6875em !important;
+  color: #767676 !important;
+  text-align: left !important;
+  margin-bottom: 0 !important;
 }
 
-.inline-li{
-	display: inline;
-	margin-right: 30px;
+.inline-li {
+  display: inline;
+  margin-right: 30px;
 }
 
-.social-link{
-	display: block;
-	height: 50px;
-	margin-bottom: 0;
-	margin-left: 300px;
+.social-link {
+  display: block;
+  height: 50px;
+  margin-bottom: 0;
+  margin-left: 300px;
 }
-.social-link li{
-	display: inline-flex;
+
+.social-link li {
+  display: inline-flex;
 }
 
 .list-inline-social {
-	width: 100px;
-	padding: 0;
+  width: 100px;
+  padding: 0;
 }
 
 .main-row {
-	display: inline-flex !important;
-	border: none !important;
-	background: none !important;
-	box-shadow: none !important;
+  display: inline-flex !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
 }
 
 footer#footer-edx-v3 .icon {
-	font-size: 27px;
+  font-size: 27px;
 }
 
 footer#footer-edx-v3 .openedx-link {
-	display: block !important;
-	margin-left: 0 !important;
-	margin-bottom: 10px !important;
-	margin-top: 50px !important;
-	width: 100px !important;
+  display: block !important;
+  margin-left: 0 !important;
+  margin-bottom: 10px !important;
+  margin-top: 50px !important;
+  width: 100px !important;
 }
 
-.nav-title{
-	margin-left: 50px;
+.nav-title {
+  margin-left: 50px;
 }
 
-.copy-div{
-	padding: 0;
-	margin-top: 50px;
+.copy-div {
+  padding: 0;
+  margin-top: 50px;
 }
 
 // .nav-legal {
 // 	font-size: 11px !important;
 // }
 
-.container.about{
-	background: #b1e4ff1a;
-	margin-top: 35px;
-	margin-bottom: 35px;
-	box-shadow: 0px 0px 17px -4px rgba(0,0,0,0.75);
-	text-align: left;
-	border-radius: 3px;
-	display: block;
-	position: relative;
+.container.about {
+  background: #b1e4ff1a;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  box-shadow: 0px 0px 17px -4px rgba(0, 0, 0, 0.75);
+  text-align: left;
+  border-radius: 3px;
+  display: block;
+  position: relative;
 }
 
-.text-contact{
-	margin-left: 10%;
-	margin-right: auto;
+.text-contact {
+  margin-left: 10%;
+  margin-right: auto;
 }
 
-.wings-logo1{
-	background: url('#{$static-path}/images/Wings.png');
-	display: block;
-	position: absolute;
-	right: 300px;
-	width: 300px;
-	height: 300px;
-	bottom: 0px;
+.wings-logo1 {
+  background: url('#{$static-path}/images/Wings.png');
+  display: block;
+  position: absolute;
+  right: 300px;
+  width: 300px;
+  height: 300px;
+  bottom: 0px;
 }
 
-.wings-logo2{
-	background: url('#{$static-path}/images/wings_big.png');
-	display: block;
-	position: absolute;
-	right: 0px;
-	width: 900px;
-	height: 600px;
-	bottom: -35px;
-}
-.wings-logo-index{
-	background: url('#{$static-path}/images/wings_big_index.png');
-	display: block;
-	position: absolute;
-	right: 0px;
-	width: 900px;
-	height: 445px;
-	bottom: -35px;
+.wings-logo2 {
+  background: url('#{$static-path}/images/wings_big.png');
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 900px;
+  height: 600px;
+  bottom: -35px;
 }
 
-.about-logo{
-	width: 800px !important;
+.wings-logo-index {
+  background: url('#{$static-path}/images/wings_big_index.png');
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 900px;
+  height: 445px;
+  bottom: -35px;
 }
 
-.index-logo{
-	width: 350px !important;
-	bottom: 0px !important;
+.about-logo {
+  width: 800px !important;
+}
+
+.index-logo {
+  width: 350px !important;
+  bottom: 0px !important;
 }
 
 // .content-wrapper{
@@ -146,47 +151,47 @@ footer#footer-edx-v3 .openedx-link {
 // 	display: block !important;
 // }
 
-.text-about{
-	display: block;
-	float: left;
-	position: relative;
-	width: 700px;
+.text-about {
+  display: block;
+  float: left;
+  position: relative;
+  width: 700px;
 }
 
-.info-card-logo{
-	background: url('#{$static-path}/images/logo_itoo.png');
-	position: absolute;
-	width: 160px;
-	height: 93px;
-	vertical-align: middle;
-	left: 28.5%;
-	top: 10%;
-	display: block;
+.info-card-logo {
+  background: url('#{$static-path}/images/logo_itoo.png');
+  position: absolute;
+  width: 160px;
+  height: 93px;
+  vertical-align: middle;
+  left: 28.5%;
+  top: 10%;
+  display: block;
 }
 
-.info-card{
-	width: 400px;
-	height: 400px;
-	display: block;
-	position: relative;
-	left: 720px;
-	border-radius: 3px;
-	box-shadow: 0px 0px 17px -4px rgba(0,0,0,0.75);
-	background: #f6f6f6cc;
+.info-card {
+  width: 400px;
+  height: 400px;
+  display: block;
+  position: relative;
+  left: 720px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 17px -4px rgba(0, 0, 0, 0.75);
+  background: #f6f6f6cc;
 }
 
-.text-card{
-	display: block;
-	position: absolute;
-	left: 28.5%;
-	top: 45%;
-	text-align: center;
-	padding: 0px;
-	margin: 0px;
+.text-card {
+  display: block;
+  position: absolute;
+  left: 28.5%;
+  top: 45%;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
-.privacy{
-	left: 5% !important;
+.privacy {
+  left: 5% !important;
 }
 
 // p{
@@ -265,3 +270,9 @@ footer#footer-edx-v3 .openedx-link {
 // .verification-process .carousel .wrapper-task .controls .control .action .icon, .courses-container .courses .course .course-info .course-title, .wrapper-msg .is-dismissable .action-dismiss .button-dismiss, .alert:not(.pattern-library-shim) .action-dismiss .icon {
 //     font-size: 14px;
 // }
+
+.dashboard .main-container .my-courses .course .details .wrapper-course-image {
+  width: unset;
+  max-height: 150px;
+  overflow: visible;
+}
