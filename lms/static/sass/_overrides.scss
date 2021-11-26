@@ -278,6 +278,24 @@ footer#footer-edx-v3 .openedx-link {
 //}
 
 .course-image {
-    width: 266px;
-    height: 150px;
+  width: 266px;
+  height: 150px;
+}
+
+.proctored_exam_status {
+  .exam-timer {
+    .exam-text {
+      display: inline-block;
+      width: calc(100% - 350px);
+    }
+  }
+}
+
+#turn_in_exam_id {
+  display: flex;
+  flex-direction: column-reverse;
+
+  span {
+    margin-bottom: .5rem;
+  }
 }
