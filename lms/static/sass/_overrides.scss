@@ -33,6 +33,7 @@ footer#footer-edx-v3 {
 .copyright {
   margin: -2px 0 8px 0 !important;
   font-size: 0.6875em !important;
+  line-height: 20.72px;
   color: #767676 !important;
   text-align: left !important;
   margin-bottom: 0 !important;
@@ -48,6 +49,10 @@ footer#footer-edx-v3 {
   height: 50px;
   margin-bottom: 0;
   margin-left: 300px;
+
+  hr {
+    margin: .5em 0;
+  }
 }
 
 .social-link li {
@@ -66,16 +71,29 @@ footer#footer-edx-v3 {
   box-shadow: none !important;
 }
 
-footer#footer-edx-v3 .icon {
-  font-size: 27px;
+
+footer#footer-edx-v3 {
+  .icon {
+    font-size: 24px;
+  }
+
+  .openedx-link {
+    position: relative;
+    top: 25px;
+    width: 100px !important;
+  }
+
+  .ul.social {
+    margin-top: 3px;
+  }
 }
 
-footer#footer-edx-v3 .openedx-link {
-  display: block !important;
-  margin-left: 0 !important;
-  margin-bottom: 10px !important;
-  margin-top: 50px !important;
-  width: 100px !important;
+.edx-footer-logo {
+  align-items: center;
+
+  img {
+    height: 50px;
+  }
 }
 
 .nav-title {
@@ -84,7 +102,6 @@ footer#footer-edx-v3 .openedx-link {
 
 .copy-div {
   padding: 0;
-  margin-top: 50px;
 }
 
 // .nav-legal {
@@ -224,18 +241,18 @@ footer#footer-edx-v3 .openedx-link {
 // }
 
 // .course-info header.course-profile {
-// 	background: none !important; 
-//     background-image: none !important; 
-//     background-size: none !important; 
-//     box-shadow: none !important; 
-//     border-bottom: none !important; 
-//     box-shadow: none !important; 
-//     height: 100% !important; 
-//     margin-top: none !important; 
+// 	background: none !important;
+//     background-image: none !important;
+//     background-size: none !important;
+//     box-shadow: none !important;
+//     border-bottom: none !important;
+//     box-shadow: none !important;
+//     height: 100% !important;
+//     margin-top: none !important;
 //     padding-top: 30px !important;
-//     overflow: none !important; 
+//     overflow: none !important;
 // 	position: none !important;
-// 	padding-bottom: 30px !important; 
+// 	padding-bottom: 30px !important;
 // }
 
 // .course-info header.course-profile .intro-inner-wrapper{

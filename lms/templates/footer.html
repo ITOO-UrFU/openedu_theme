@@ -1,151 +1,147 @@
 ## mako
 <%page expression_filter="h"/>
 <%!
-  from django.urls import reverse
-  from django.utils.translation import ugettext as _
-  from branding.api import get_footer
-  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+from django.urls import reverse
+from django.utils.translation import ugettext as _
+from branding.api import get_footer
+from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
 %>
 <% footer = get_footer(is_secure=is_secure) %>
 <% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
 <%namespace name='static' file='static_content.html'/>
 
 % if uses_bootstrap:
-  <div class="container-fluid wrapper-footer" style="background: #ececec !important;box-shadow: 0 10px 15px 0 #111 !important;">
+<div class="container-fluid wrapper-footer" style="background: #ececec !important;box-shadow: 0 10px 15px 0 #111 !important;">
     <footer>
-      <div class="row">
-        <div class="col-md-9">
-          <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}" style="margin-bottom: 20px;">
-            <ul class="navbar-nav" style="display:none !important">
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-              % if link['name'] != 'contact':
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endif
-              % endfor
-                <li class="nav-item">
-                  <a class="nav-link" href="/contact">Контакты</a>
-                </li>
-            </ul>
-          </nav>
+        <div class="row">
+            <div class="col-md-9">
+                <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}" style="margin-bottom: 20px;">
+                    <ul class="navbar-nav" style="display:none !important">
+                        % for item_num, link in enumerate(footer['navigation_links'], start=1):
+                        % if link['name'] != 'contact':
+                        <li class="nav-item">
+                            <a class="nav-link" href="${link['url']}">${link['title']}</a>
+                        </li>
+                        % endif
+                        % endfor
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
 
-          ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
-          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">ЦНОТиАСО</p>
-          <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">${footer['copyright']}
-               % if icp_license_info.get('icp_license'):
-                ${u" | {text}".format(text=icp_license_info.get('text'))}
-                <a href="${icp_license_info.get('icp_license_link', '#')}">
-                    ${u" {icp}".format(icp=icp_license_info.get('icp_license'))}
-                </a>
-              % endif
-          </p>
+                ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+                <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
+                <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">ЦНОТиАСО</p>
+                <p class="copyright" style="font-size: 0.6875em !important;color: #767676 !important;text-align: left !important;margin-bottom: 0 !important;margin-top: 0 !important;">${footer['copyright']}
+                    % if icp_license_info.get('icp_license'):
+                    ${u" | {text}".format(text=icp_license_info.get('text'))}
+                    <a href="${icp_license_info.get('icp_license_link', '#')}">
+                        ${u" {icp}".format(icp=icp_license_info.get('icp_license'))}
+                    </a>
+                    % endif
+                </p>
 
-          <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['legal_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-              <li class="nav-item">
-                <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="tech" href="/tech">Технические требования</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          ## Please leave this link and use one of the logos provided
-          ## The OpenEdX link may be hidden when this view is served
-          ## through an API to partner sites (such as marketing sites or blogs),
-          ## which are not technically powered by Open edX.
-          % if not hide_openedx_link:
-            <div class="footer-about-openedx" style="display: none !important">
-              <p>
-                <a href="${footer['openedx_link']['url']}">
-                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
-                </a>
-              </p>
+                <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
+                    <ul class="navbar-nav">
+                        % for item_num, link in enumerate(footer['legal_links'], start=1):
+                        <li class="nav-item">
+                            <a class="nav-link" href="${link['url']}">${link['title']}</a>
+                        </li>
+                        % endfor
+                        <li class="nav-item">
+                            <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tech" href="/tech">Технические требования</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-          % endif
+            <div class="col-md-3">
+                ## Please leave this link and use one of the logos provided
+                ## The OpenEdX link may be hidden when this view is served
+                ## through an API to partner sites (such as marketing sites or blogs),
+                ## which are not technically powered by Open edX.
+                % if not hide_openedx_link:
+                <div class="footer-about-openedx" style="display: none !important">
+                    <p>
+                        <a href="${footer['openedx_link']['url']}">
+                            <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140"/>
+                        </a>
+                    </p>
+                </div>
+                % endif
+            </div>
         </div>
-      </div>
     </footer>
-  </div>
+</div>
 % else:
-<footer id="footer-edx-v3" role="contentinfo" aria-label="${_("Page Footer")}"
-  ## When rendering the footer through the branding API,
-  ## the direction may not be set on the parent element,
-  ## so we set it here.
-  % if bidi:
-    dir=${bidi}
-  % endif
+<footer id="footer-edx-v3" role="contentinfo" aria-label="${_(" Page Footer")}"
+## When rendering the footer through the branding API,
+## the direction may not be set on the parent element,
+## so we set it here.
+% if bidi:
+dir=${bidi}
+% endif
 >
 
 <div class="container" style="background: #ececec !important; max-width: 1100px;">
     <div class="row main-row">
-                <div class="edx-footer-logo">
-                    <a href="${marketing_link('ROOT')}">
-                        <img alt="organization logo" src="${static.url("images/logo.png")}">
-                    </a>
-                </div>
+        <div class="edx-footer-logo">
+            <a href="${marketing_link('ROOT')}">
+                <img alt="organization logo" src="${static.url(" images/logo.png")}">
+            </a>
+        </div>
 
         <div class="nav-title">
-             <div class="row">
+            <div class="row">
 
-                 <nav class="nav-colophon" aria-label="${_('About')}">
-                              <ul style="display: none !important" class="list-unstyled clear-margins  ">
-                                    % for item_num, link in enumerate(footer['navigation_links'], start=1):
-                                    % if link['name'] != 'contact':
-                                    <li class="nav-colophon-0${item_num} inline-li">
-                                        <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
-                                    </li>
-                                    % endif
-                                    % endfor
-                                    <li class="nav-colophon-03 inline-li">
-                                      <a id="contact" href="/contact">Контакты</a>
-                                    </li>
-                              </ul>
-                 </nav>
+                <nav class="nav-colophon" aria-label="${_('About')}">
+                    <ul style="display: none !important" class="list-unstyled clear-margins  ">
+                        % for item_num, link in enumerate(footer['navigation_links'], start=1):
+                        % if link['name'] != 'contact':
+                        <li class="nav-colophon-0${item_num} inline-li">
+                            <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
+                        </li>
+                        % endif
+                        % endfor
+                        <li class="nav-colophon-03 inline-li">
+                            <a id="contact" href="/contact">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
 
 
             </div>
             <div class="copy-div">
                 <p class="copyright">ФГАОУ ВО «УрФУ имени первого Президента России Б.Н.Ельцина»</p>
                 <p class="copyright">ЦНОТиАСО</p>
-
-                <nav class="nav-legal" aria-label="${_('Legal')}">
-                    <ul>
-                    % for item_num, link in enumerate(footer['legal_links'], start=1):
-                        <li class="nav-legal-0${item_num}">
-                        <a href="${link['url']}">${link['title']}</a>
-                        </li>
-                    % endfor
-                        <li class="nav-legal-01 inline-li">
-                            <a id="tech" href="/tech">Технические требования</a>
-                        </li>
-                    </ul>
-                </nav>
+                % for item_num, link in enumerate(footer['legal_links'], start=1):
+                <p class="copyright">
+                    <a href="${link['url']}">${link['title']}</a>
+                </p>
+                % endfor
+                <p class="copyright">
+                    <a id="tech" href="/tech">Технические требования</a>
+                </p>
             </div>
         </div>
         <div class="social-link">
-             <ul class="list-inline-social list-unstyled social">
-                    % for link in footer['social_links']:
-                    <li>
-                        <a href="${link['url']}" class="social-links external" title="${link['title']}" rel="noreferrer">
-                            <span class="icon fa ${link['icon-class']}" aria-hidden="true"></span>
-                            <span class="sr">${link['action']}</span>
-                        </a>
-                    </li>
-                    % endfor
-             </ul>
-              <div class="openedx-link">
+            <ul class="list-inline-social list-unstyled social">
+                % for link in footer['social_links']:
+                <li>
+                    <a href="${link['url']}" class="social-links external" title="${link['title']}" rel="noreferrer">
+                        <span class="icon fa ${link['icon-class']}" aria-hidden="true"></span>
+                        <span class="sr">${link['action']}</span>
+                    </a>
+                </li>
+                % endfor
+            </ul>
+            <hr>
+            <div class="openedx-link">
                 <a href="${footer['openedx_link']['url']}" title="${footer['openedx_link']['title']}">
-                  <img alt="${footer['openedx_link']['title']}" src="${footer['openedx_link']['image']}" width="100">
+                    <img alt="${footer['openedx_link']['title']}" src="${footer['openedx_link']['image']}" width="100">
                 </a>
             </div>
         </div>
@@ -155,15 +151,15 @@
 </footer>
 % endif
 % if include_dependencies:
-  <%static:js group='base_vendor'/>
-  <%static:css group='style-vendor'/>
-  <%include file="widgets/segment-io.html" />
-  <%include file="widgets/segment-io-footer.html" />
+<%static:js group='base_vendor'/>
+<%static:css group='style-vendor'/>
+<%include file="widgets/segment-io.html" />
+<%include file="widgets/segment-io-footer.html" />
 % endif
 % if footer_css_urls:
-  % for url in footer_css_urls:
-    <link rel="stylesheet" type="text/css" href="${url}"></link>
-  % endfor
+% for url in footer_css_urls:
+<link rel="stylesheet" type="text/css" href="${url}"></link>
+% endfor
 % endif
 
 
