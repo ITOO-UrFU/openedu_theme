@@ -8,12 +8,12 @@
     %>
     <div class='exam-text'>
         <% // xss-lint: disable=underscore-not-escaped %>
-        <%= interpolate_text('Для изучения Вам предлагается «{exam_link}», время на освоение видеоматериалов и выполнения тестовых заданий ограничено. После завершения тестирования нажмите кнопку «Отправить». Материалы доступны только один раз, повторное ознакомление с материалами невозможно.', {exam_link: "<a href='" + exam_url_path + "'>"+gtLtEscape(exam_display_name)+"</a>"}) %>
+        <%= interpolate_text(gettext('You are taking "{exam_link}" as {exam_type}. '), {exam_link: "<a href='" + exam_url_path + "'>"+gtLtEscape(exam_display_name)+"</a>", exam_type: (!_.isUndefined(arguments[0].exam_type)) ? exam_type : gettext('a timed exam')}) %>
     </div>
     <div id="turn_in_exam_id" class="pull-right turn_in_exam">
         <span>
             <% if(attempt_status !== 'ready_to_submit') {%>
-                <button class="exam-button-turn-in-exam btn btn-pl-primary btn-primary" style="display: none !important;">
+                <button class="exam-button-turn-in-exam btn btn-pl-primary btn-primary">
                     <%- gettext("End My Exam") %>
                 </button>
             <% } %>
