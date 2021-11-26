@@ -1,75 +1,72 @@
 {% load i18n %}
 <div class="sequence timed-exam entrance" data-exam-id="{{exam_id}}">
-  <h3>
-    {% blocktrans %}
-    {{ exam_name }} is a Timed Exam ({{total_time}})
-    {% endblocktrans %}
-  </h3>
-  <p>
-<br/>
-Чтобы успешно пройти тестирование, выполните все задания за отведенное время.<br/>
-    Задание считается выполненным после нажатия кнопки <strong>«Отправить»</strong>. При этом доступное количество попыток сократится и отобразится результат выполнения задания (количество набранных баллов из возможных и сообщение о правильности выполнения с цветовой индикацией).
-    <br/>
-Успехов!  
-  </p>
-  <button class="gated-sequence start-timed-exam action-primary" data-ajax-url="{{enter_exam_endpoint}}" data-exam-id="{{exam_id}}">
-    <a>
-      {% blocktrans %}
-        I am ready to start this timed exam.
-      {% endblocktrans %}
-      <span class="icon fa fa-arrow-circle-right" aria-hidden="true"></span>
-    </a>
-  </button>
+    <h3>
+        {% blocktrans %}
+        {{ exam_name }} с ограничением по времени ({{total_time}})
+        {% endblocktrans %}
+    </h3>
+    <p>
+        <br/>
+        Чтобы успешно пройти тестирование, выполните все задания за отведенное время.
+    <p>Задание считается выполненным после нажатия кнопки <strong>«Отправить»</strong>. Если кнопка неактивна, убедитесь, что вы ответили на все вопросы, расположенные выше.</p>
+    <p>После отправки ответа сократится доступное количество попыток и отобразится результат выполнения задания (количество набранных баллов из возможных и сообщение о правильности выполнения с цветовой индикацией).</p>
+    <p>Успехов!</p>
+    <button class="gated-sequence start-timed-exam action-primary" data-ajax-url="{{enter_exam_endpoint}}" data-exam-id="{{exam_id}}">
+        <a>
+            Приступить к выполнению заданий с ограничением времени
+            <span class="icon fa fa-arrow-circle-o-right" aria-hidden="true"></span>
+        </a>
+    </button>
 </div>
 {% if not hide_extra_time_footer %}
-  {% include 'timed_exam/footer.html' %}
+{% include 'timed_exam/footer.html' %}
 {% endif %}
 
 <script type="text/javascript">
 
-  var inProcess = false;
+    var inProcess = false;
 
-  var disableClickEvent = function () {
-    inProcess = true;
-    $('body').css('cursor', 'wait');
-    $('.start-timed-exam').css('cursor', 'wait');
-  };
+    var disableClickEvent = function () {
+        inProcess = true;
+        $('body').css('cursor', 'wait');
+        $('.start-timed-exam').css('cursor', 'wait');
+    };
 
-  var enableClickEvent = function () {
-    inProcess = false;
-    $('body').css('cursor', 'auto');
-    $('.start-timed-exam').css('cursor', 'auto');
-  };
+    var enableClickEvent = function () {
+        inProcess = false;
+        $('body').css('cursor', 'auto');
+        $('.start-timed-exam').css('cursor', 'auto');
+    };
 
-  $('.start-timed-exam').click(function () {
-      if (!inProcess) {
-        disableClickEvent();
-        var action_url = $(this).data('ajax-url');
-        var exam_id = $(this).data('exam-id');
+    $('.start-timed-exam').click(function () {
+            if (!inProcess) {
+                disableClickEvent();
+                var action_url = $(this).data('ajax-url');
+                var exam_id = $(this).data('exam-id');
 
-        $.post(
-          action_url,
-          {
-            "exam_id": exam_id,
-            "start_clock": true
-          },
-          function (data) {
-            // reload the page, because we've unlocked it
-            location.reload();
-          }
-        ).fail(function(){
-          enableClickEvent();
-          var msg = gettext(
-            "There has been a problem starting your exam.\n\n" +
-            "Possible reasons are that your account has not been fully activated,\n" +
-            "you are experiencing a network connection problem, or there has been\n" +
-            "a service disruption. Please check these potential problems and try again."
-          );
-          alert(msg);
-        });
-      } else {
-        return false;
-      }
-    }
-  );
+                $.post(
+                    action_url,
+                    {
+                        "exam_id": exam_id,
+                        "start_clock": true
+                    },
+                    function (data) {
+                        // reload the page, because we've unlocked it
+                        location.reload();
+                    }
+                ).fail(function () {
+                    enableClickEvent();
+                    var msg = gettext(
+                        "There has been a problem starting your exam.\n\n" +
+                        "Possible reasons are that your account has not been fully activated,\n" +
+                        "you are experiencing a network connection problem, or there has been\n" +
+                        "a service disruption. Please check these potential problems and try again."
+                    );
+                    alert(msg);
+                });
+            } else {
+                return false;
+            }
+        }
+    );
 </script>

@@ -1,3 +1,5 @@
+@import "~@edx/edx-bootstrap/scss/open-edx/theme.scss";
+
 .header-global h1.logo img {
   max-height: 40px;
 }
@@ -298,4 +300,9 @@ footer#footer-edx-v3 .openedx-link {
   span {
     margin-bottom: .5rem;
   }
+}
+
+button.start-timed-exam {
+  font-size: $font-size-lg;
+
 }
