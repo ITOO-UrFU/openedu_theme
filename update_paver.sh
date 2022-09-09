@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-cd /edx/app/edxapp/themes/openedu_theme/
+cd /edx/app/edxapp/edx-platform/themes/openedu_theme/
 sudo git pull origin prod
 
 sudo -H -u edxapp bash << EOF
