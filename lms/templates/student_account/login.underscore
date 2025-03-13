@@ -2,7 +2,7 @@
 </div>
 
 <% if ( context.createAccountOption !== false && !context.syncLearnerProfileData && !(context.enterpriseName && context.currentProvider) ) { %>
-<div class="toggle-form">
+<div class="toggle-form" style="display: none !important;">
     <span class="text">Первый раз здесь? </span>
     <a href="#login" class="form-toggle" data-type="register">Создать учётную запись.</a>
 </div>
@@ -26,7 +26,7 @@
     <button type="submit" class="action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
 
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
-    <div class="login-providers">
+    <div class="login-providers" style="display: none !important;">
         <div class="section-title lines">
             <h3>
                 <span class="text"><%- gettext("or sign in with") %></span>
